@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import AuthView from "@/components/AuthView";
 import InvoicePrintModal, { PrintableInvoiceData } from "@/components/InvoicePrintModal";
+import QuickExportAndRemindersBar from "@/components/QuickExportAndRemindersBar";
 import {
   LayoutDashboard,
   Package,
@@ -907,6 +908,7 @@ export default function BrightloopPlatform() {
         {/* TAB 1: DASHBOARD & REPORTS */}
         {activeTab === "DASHBOARD" && reportData && (
           <div className="space-y-6">
+            <QuickExportAndRemindersBar role={user.role} onNotify={notify} onRefresh={loadAllData} />
             {/* KPI Metric Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               <div className="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
